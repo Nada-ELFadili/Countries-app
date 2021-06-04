@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+
+
+        *{
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        box-sizing: border-box;
+
+        }
+        img{
+        max-width: 100%;
+
+        }
+
+
+        body{
+          font-family: 'Nunito sans', sans-serif;
+          /* padding: 20px; */
+          background-color: #D6D9E2;
+          color: #661b2f;
+        }
+
+/*The buttons  */
+
+.buttons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.btn{
+  background-color: #998ea0 ;
+  padding: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid #998ea0 ;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+.btn:hover{
+  background-color: #fff;
+  color:var(--dark-bg-color) ;
+
+}
+
+.btn-light{
+  background-color: var(--article-color);
+  border: 2px solid  var(--article-color);
+}
+
+
+
+
+        /*  The Header things */
+
+         .header{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background-color:#998ea0;
+          padding:20px 20px;
+        } 
+          /* The Filter */
+           .filter{
+            display: flex;
+            flex-direction: column; 
+            /* align-items: center; */
+            padding: 20px ;
+
+          } 
+          .filter .form-control{
+            width: 200px;
+          } 
+           .filter .form-control input{
+            background-color: #998ea0 ;
+            border: none;
+            outline: none; 
+            border-radius: 5px;
+            padding:  12px ;
+            color: #fff;
+            font-family: inherit;
+            letter-spacing: 0.5px;
+            width:100% ;
+            margin: 0 0 30px;
+          }
+          .filter .form-control input::placeholder{
+            color: #fff;
+          }
+
+          .filter .region-filter{
+            width: 100%;
+          } 
+          .filter .region-filter .select{
+            background-color: #998ea0;
+            color: #fff;
+            font-family: inherit;
+            padding: 12px;
+            width: 200px;
+            border: none;
+            border-radius: 5px; 
+          }
+
+        /* Grid things */
+        .grid{
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 40px;
+          padding: 20px;
+        }
+        .grid article {
+          box-shadow: 0 10px 10px rgba(9, 17, 22, 0.5) ;
+        }
+        .grid article img {
+         border-radius: 5px 5px 0 0 ; 
+          height: 250px;
+         } 
+        .grid.details{
+          /* background-color: rgb(27, 72, 131); */
+         padding: 40px 20px;
+         margin-top: -20px;
+         border-radius: 0 0 5px 5px;
+        }
+        .grid.details h3{
+          padding-bottom: 10px;
+        }
+        .grid.details h4{
+          padding-bottom: 5px;
+        }
+        .grid.details h4 span{
+          font-weight: 300;
+        }
+
+       
+                  /* the Responsive things */
+                @media (min-width :640px) {
+                  .grid{
+                  grid-template-columns: repeat(2,1fr);
+                }} 
+
+                @media (min-width :768px) {
+                  .filter{
+                    flex-direction: row;
+                    justify-content: space-between;
+                  }
+                  .filter.form-control{
+                    width: auto;
+                    margin: 0;
+                  }
+                  .filter .region-filter{
+                    width: auto;
+                  }
+                  .filter.form-control input{
+                    width: auto;
+                  }
+                  .grid{
+                  grid-template-columns: repeat(2,1fr);
+                  }}
+
+                @media (min-width :992px) {
+                  .header, 
+                  .filter,
+                  .grid, {
+                    padding:20px 100px;
+                  }
+                  .grid{
+                  grid-template-columns: repeat(3, 1fr);
+                  gap: 60px;
+                  }
+                }
